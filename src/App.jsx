@@ -11,9 +11,7 @@ import {
   Routes,
 } from "react-router-dom";
 import Navbar from "./component/Navbar";
-import Addmodal from "./component/Dashboard/Taskbar/Addmodal";
 import { useEffect, useState } from "react";
-import { Alert } from "@mui/material";
 import Muialert from "./component/Muialert";
 import { useSelector } from "react-redux";
 
