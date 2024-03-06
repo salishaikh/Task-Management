@@ -15,7 +15,7 @@ const Addmodal = () => {
     try {
       await axios
         .post(
-          "http://localhost:4000/api/tasks/createtask",
+          "https://taskmanagement---backend.glitch.me/api/tasks/createtask",
           {
             title: name,
             description: desc,

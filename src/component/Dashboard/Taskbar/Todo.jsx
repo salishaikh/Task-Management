@@ -17,7 +17,7 @@ const Todo = () => {
     const fetchtasks = async () => {
       await axios
         .post(
-          "http://localhost:4000/api/tasks/fetchtask",
+          "https://taskmanagement---backend.glitch.me/api/tasks/fetchtask",
           { id: todos.id },
 
           {

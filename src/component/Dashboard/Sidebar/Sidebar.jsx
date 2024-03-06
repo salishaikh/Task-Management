@@ -16,7 +16,7 @@ const Sidebar = (props) => {
     const fetchBoards = async () => {
       await axios
         .post(
-          "http://localhost:4000/api/board/fetchboard",
+          "https://taskmanagement---backend.glitch.me/api/board/fetchboard",
           { id: Board.id },
           {
             headers: {

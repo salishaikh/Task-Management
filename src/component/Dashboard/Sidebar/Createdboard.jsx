@@ -69,7 +69,7 @@ const Elipsismenu = (props) => {
             onClick={async () => {
               await axios
                 .post(
-                  "http://localhost:4000/api/board/deleteboard",
+                  "https://taskmanagement---backend.glitch.me/api/board/deleteboard",
                   { id: props.id },
                   {
                     headers: {

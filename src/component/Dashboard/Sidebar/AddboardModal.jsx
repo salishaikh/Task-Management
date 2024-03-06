@@ -19,7 +19,7 @@ const addboardmodal = () => {
     setMessage("Board Created", 1000);
     await axios
       .post(
-        "http://localhost:4000/api/board/createboard",
+        "https://taskmanagement---backend.glitch.me/api/board/createboard",
         {
           title: name,
         },

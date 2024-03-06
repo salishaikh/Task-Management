@@ -21,7 +21,7 @@ const Taskbar = () => {
     try {
       await axios
         .post(
-          "http://localhost:4000/api/tasks/updatetask",
+          "https://taskmanagement---backend.glitch.me/api/tasks/updatetask",
           { id, status },
           {
             headers: {

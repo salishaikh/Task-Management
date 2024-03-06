@@ -12,7 +12,7 @@ const Elipsismenu = (props) => {
   const deletehandler = async () => {
     await axios
       .post(
-        "http://localhost:4000/api/tasks/deletetask",
+        "https://taskmanagement---backend.glitch.me/api/tasks/deletetask",
         {
           id: props.id,
         },

@@ -11,7 +11,7 @@ const Editboardmodal = (props) => {
     const updateBoardToBackend = async () => {
         console.log(props.id);
         try {
-            await axios.post("http://localhost:4000/api/board/updateboard",
+            await axios.post("https://taskmanagement---backend.glitch.me/api/board/updateboard",
                 {
 
                     title: name,
