@@ -34,7 +34,8 @@ const Sidebar = (props) => {
     fetchBoards();
   }, []);
   return (
-    <div className="second  border border-transparent h-[calc(100vh-5rem)] min-w-[12rem] bg-white  overflow-y-auto overflow-x-hidden">
+
+    <div className={`second  border border-transparent h-[calc(100vh-5rem)] min-w-[12rem]  bg-white  overflow-y-auto overflow-x-hidden `}>
       {/* drop-shadow-2xl */}
       <div
         className="sidebarborder-black h-[calc(100%-3rem)] 

@@ -14,7 +14,7 @@ const Navbar = ({ isLoggedIn, setIsLoggedIn }) => {
   return (
     <>
       <nav className="bg-[#ffffff] h-[50px] font-[ 'Fira Sans']">
-        <div className="main flex items-center h-full justify-between">
+        <div className="main flex items-center h-full justify-between m-1">
           <div className="logo h-full">
             <img className="h-full object-contain " src={LogoImage} alt="" />
           </div>
@@ -45,7 +45,7 @@ const Navbar = ({ isLoggedIn, setIsLoggedIn }) => {
             </ul>
           </div>
           <div
-            className="btn px-4 py-2 m-3 mt-4 rounded-md  border border-[#3a90f6] text-[#3a90f6]
+            className="btn lg:px-4 lg:py-2 px-2 py-1 m-3 lg:mt-4  rounded-md  border border-[#3a90f6] text-[#3a90f6]
           hover:text-white
         hover:bg-[#3a90f6] "
           >

@@ -4,9 +4,9 @@ import back from "./../../assets/back.jpg";
 const Sec1 = ({ cname }) => {
   return (
     <>
-      <div className="sec1  mt-5 flex justify-start flex-row font-['Raleway'] font-bold  ">
-        <div className="head mt-6 p-2 w-[60rem]  ">
-          <div className="text-[5.4rem] mt-8 text-center  ">
+      <div className="sec1  mt-5 flex justify-start lg:flex-row flex-col font-['Raleway'] font-bold  ">
+        <div className="head mt-6 p-2 lg:w-[60rem]  ">
+          <div className="lg:text-[5.4rem] text-[1.5rem] mt-8 text-center  ">
             Manage Your Tasks Easily With{" "}
             <div className="brand text-[#3a90f6]">{cname}</div>
           </div>
@@ -20,7 +20,7 @@ const Sec1 = ({ cname }) => {
             </button>
           </div>
         </div>
-        <div className="img w-[60rem]  ">
+        <div className="img lg:w-[60rem]  ">
           <img className="" src={back} alt="" />
         </div>
       </div>

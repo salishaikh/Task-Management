@@ -26,14 +26,16 @@ const Doing = () => {
   }, [todos]);
 
   return (<>
-    <div className="todo w-[30%]  flex flex-col  p-3 items-start ">
+    <div className="todo lg:w-[30%] w-full flex flex-col  p-3 items-start ">
       <h1 className="pl-12 pb-3 ">Doing ({todosCount})</h1>
       <Droppable droppableId="doinglist">
         {(provided) => (
           <div
             {...provided.droppableProps}
             ref={provided.innerRef}
-            className="w-full h-[calc(100vh-15rem)] overflow-y-auto scrollbar-hide min-h-[250px]  rounded-lg"
+            className="w-full lg:h-[calc(100vh-15rem)] 
+            max-h-[400px]
+            overflow-y-auto scrollbar-hide min-h-[250px] scroll-smooth rounded-lg"
           >
             {todos?.map((todo, i) => {
               if (todo.boardId === boardId && todo.status === "doing")

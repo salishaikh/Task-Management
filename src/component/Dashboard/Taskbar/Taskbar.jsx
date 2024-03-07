@@ -12,7 +12,7 @@ import { addTodo, deleteTodo } from "../../../store/features/TodoSlice";
 import { setMessage } from "../../../Message";
 
 
-const Taskbar = () => {
+const Taskbar = ({ sidemenu, setSidemenu }) => {
   const [todo, setTodo] = useState([]);
   const todos = useSelector((state) => state.todos.todos);
   const dispatch = useDispatch();
@@ -72,17 +72,24 @@ const Taskbar = () => {
   return (
     <div
       className=" border-black h-full 
-     w-full bg-[#f4f7fd] rounded-2xl py-10  m-2"
+     w-full bg-[#f4f7fd] rounded-2xl lg:py-10 py-2  m-2"
     >
+      <div className="menus flex justify-between lg:justify-end mt-3 ">
+        <div onClick={() => {
+          setSidemenu(!sidemenu)
+        }} className="sidemenu ml-6 lg:hidden flex ease-in-out duration-75">
+          <ion-icon name="menu-outline" size="large"></ion-icon>
+        </div>
+        <div className="btn  mr-10  ">
+          <Addmodal setTodo={setTodo} todo={todo} />
 
-      <div className="btn flex justify-end mr-10  ">
-        <Addmodal setTodo={setTodo} todo={todo} />
-
+        </div>
       </div>
+
       <DragDropContext onDragEnd={onDragEnd} >
 
 
-        <div className="cont flex items-start justify-evenly  gap-2  ">
+        <div className="cont flex items-start justify-evenly  gap-2 flex-col lg:flex-row ">
           <Todo todo={todo} />
           <Doing />
           <Done />

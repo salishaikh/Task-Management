@@ -3,9 +3,40 @@ import { Draggable } from "react-beautiful-dnd"
 import { VscKebabVertical } from "react-icons/vsc";
 import Elipsismenu from "./Elipsismenu";
 import EditModal from "./EditModal";
+import { deleteTodo, editTodo } from "../../../store/features/TodoSlice";
+import { useDispatch, useSelector } from "react-redux";
+import axios from "axios";
+import { setMessage } from "../../../Message";
 const Addtodo = (props) => {
   const [elipsisopen, setElipsisopen] = useState(false);
   const [isEditMenuOpen, setIsEditMenuOpen] = useState(false);
+  const todos = useSelector((state) => state.todos.todos);
+  const deletehandler = async () => {
+    await axios
+      .post(
+        "https://taskmanagement---backend.glitch.me/api/tasks/deletetask",
+        {
+          id: props.id,
+        },
+        {
+          headers: {
+            "auth-token": localStorage.getItem("token"),
+          },
+        }
+      )
+      .then((res) => {
+        if (res.status === 200) {
+          dispatch(
+            deleteTodo({
+              id: props.id,
+              todos,
+            })
+          );
+        }
+      });
+    setMessage("Task Deleted", 2000);
+  };
+  const dispatch = useDispatch();
   return (
     <>
 
@@ -35,20 +66,20 @@ const Addtodo = (props) => {
                   </div>
                   <div className="right flex  mr-2">
                     <div className="kebab cursor-pointer relative">
-                      {elipsisopen && (
-                        <Elipsismenu
-                          type="task"
-                          id={props.id}
-                          setElipsisopen={setElipsisopen}
-                          setIsEditMenuOpen={setIsEditMenuOpen}
-                        />
-                      )}
-                      <VscKebabVertical
-                        onClick={() => {
-                          setElipsisopen(!elipsisopen);
+                      <div className="icon flex gap-2">
 
-                        }}
-                      />
+                        <div className="edit" onClick={() => {
+                          dispatch(editTodo(props.id));
+                          setIsEditMenuOpen(true);
+
+                        }}>
+                          <ion-icon name="create-outline"></ion-icon>
+                        </div>
+                        <div className="delete" onClick={deletehandler}>
+
+                          <ion-icon name="trash-outline"></ion-icon>
+                        </div>
+                      </div>
                     </div>
 
                   </div>
@@ -61,6 +92,7 @@ const Addtodo = (props) => {
                 </div>
               </div>
             </div>
+
           )
         }
 

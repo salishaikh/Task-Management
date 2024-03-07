@@ -6,8 +6,8 @@ import { useNavigate } from "react-router-dom";
 const Dashboard = () => {
   const navigate = useNavigate();
   const [currentBoard, setCurrentBoard] = useState("");
-
-  const fetchTasks = async () => {};
+  const [sidemenu, setSidemenu] = useState(true);
+  const fetchTasks = async () => { };
 
   useEffect(() => {
     const token = localStorage.getItem("token");
@@ -18,9 +18,9 @@ const Dashboard = () => {
   return (
     <>
       <div className="main">
-        <div className="second bg-white border border-transparent   h-[calc(100vh-5rem)] w-full  flex ">
-          <Sidebar setCurrentBoard={setCurrentBoard} />
-          <Taskbar currentBoard={currentBoard} />
+        <div className="second bg-white border border-transparent   lg:h-[calc(100vh-5rem)] lg:w-full  flex ">
+          {sidemenu && <Sidebar setCurrentBoard={setCurrentBoard} sidemenu={sidemenu} />}
+          <Taskbar currentBoard={currentBoard} sidemenu={sidemenu} setSidemenu={setSidemenu} />
         </div>
       </div>
     </>
