@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import AddboardModal from "./AddboardModal";
-import CreatedBoard from "./CreatedBoard";
+import CreatedBoard from "./Createdboard";
 import { useDispatch, useSelector } from "react-redux";
 import axios from "axios";
-import { addBoard, fetchboard } from "../../../store/features/BoardSlice";
+import { fetchboard } from "../../../store/features/BoardSlice";
 import Editboardmodal from "./Editboardmodal";
 
 const Sidebar = (props) => {
