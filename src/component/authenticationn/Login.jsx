@@ -9,7 +9,7 @@ import { useNavigate } from "react-router-dom";
 import { setErrorMessage, setMessage } from "../../Message";
 
 const Login = ({ setIsLoggedIn }) => {
-  const [credntials, setCredntials] = useState({ email: " ", password: " " });
+  const [credntials, setCredntials] = useState({ email: "", password: "" });
   const navigate = useNavigate();
   const handleclick = async () => {
     console.log("login.....");
