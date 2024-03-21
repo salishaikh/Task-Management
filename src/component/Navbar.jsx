@@ -46,11 +46,9 @@ const Navbar = ({ isLoggedIn, setIsLoggedIn }) => {
             </ul>
           </div>
           <div
-            className="btn lg:px-4 lg:py-2 px-2 py-1 m-3 lg:mt-4  rounded-md  border border-[#3a90f6] text-[#3a90f6]
-          hover:text-white
-        hover:bg-[#3a90f6] "
+            className="btn lg:px-4 lg:py-2 px-2 py-1 m-3 lg:mt-4  relative overflow-hidden  rounded-full group bg-white  [background-size:400%] text-black cursor-pointer drop-shadow-lg before:transition-transform before:duration-300 hover:before:scale-x-100 before:scale-x-0 before:absolute before:top-0 before:left-0  before:origin-[0_50%] before:w-full before:h-full before:rounded-full before:bg-gradient-to-r before:from-cyan-500 before:to-blue-500 "
           >
-            <button onClick={handleLogout}>
+            <button onClick={handleLogout} className=" relative z-10 w-full h-full flex justify-center items-center group-hover:text-white transition-all duration-300"     >
               {isLoggedIn ? <div>Logout</div> : <Link to="/login">Login</Link>}
             </button>
           </div>
