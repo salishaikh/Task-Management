@@ -13,16 +13,26 @@ const Login = ({ setIsLoggedIn }) => {
   const navigate = useNavigate();
   const handleclick = async () => {
     console.log("login.....");
-    const response = await axios.post(`${backendUrl}/api/auth/login`, {
+    await axios.post(`${backendUrl}/api/auth/login`, {
       email: credntials.email,
       password: credntials.password,
 
+    }).then((res) => {
+      localStorage.setItem("token", res.data.authtoken);
+      navigate("/dashboard");
+      setMessage("User Logged In", 2000);
+      console.log(res.data);
+
+      setIsLoggedIn(true);
+    }).catch((err) => {
+      console.log("invalid login");
+      console.log(err);
+      setErrorMessage("invalid credintials", 2000);
     });
-    console.log(response.data);
-    localStorage.setItem("token", response.data.authtoken);
-    navigate("/dashboard");
-    setMessage("User Logged In", 2000);
-    setIsLoggedIn(true);
+
+
+
+
   };
 
   const checkLoggedIn = async () => {
@@ -48,7 +58,7 @@ const Login = ({ setIsLoggedIn }) => {
 
   return (
     <>
-      <div className="flex items-center justify-center h-screen bg-[#ffffff]">
+      <div className="flex  items-center justify-center h-[calc(100vh-5rem)] bg-[#ffffff]">
         <div className="main main lg:w-fit lg:min-w-[30rem] w-full border border-black-500 rounded-md bg-[#ffffff] drop-shadow-2xl subpixel-antialiased mx-6">
           <div className=" container flex flex-col  items-center justify-center pt-14">
             <div className="head m-2">

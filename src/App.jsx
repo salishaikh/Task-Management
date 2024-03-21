@@ -43,7 +43,7 @@ function App() {
     <>
 
       {
-        errorMessage && (<Muialert msg={errorMessage} severity="danger" />)
+        errorMessage && (<Muialert msg={errorMessage} severity="error" />)
       }
       {
         Message && (<Muialert msg={Message} />)

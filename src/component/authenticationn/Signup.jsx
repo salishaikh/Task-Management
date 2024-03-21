@@ -5,12 +5,12 @@ import { RiLockPasswordLine } from "react-icons/ri";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { backendUrl } from "../../../environ";
-import { setMessage } from "../../Message";
+import { setErrorMessage, setMessage } from "../../Message";
 
 
 
 const Signup = () => {
-  const [credntials, setCredntials] = useState({ email: " ", password: " " });
+  const [credntials, setCredntials] = useState({ email: " ", password: "" });
   const navigate = useNavigate();
   const handlesignup = async () => {
     console.log("cd");
@@ -19,17 +19,23 @@ const Signup = () => {
         name: credntials.name,
         email: credntials.email,
         password: credntials.password,
+      }).then((res) => {
+        localStorage.setItem("token", res.data.authtoken);
+        setMessage("User signed Up", 2000);
+        navigate("/dashboard")
+      }).catch((err) => {
+        console.log("invalid signup error", err);
+
+        setErrorMessage("invalid credintials", 2000);
       });
-    console.log(response.data);
-    localStorage.setItem("token", response.data.authtoken);
-    setMessage("User signed Up", 2000);
-    navigate("/dashboard");
+
+    ;
   }
   const onchange = async (e) => {
     setCredntials({ ...credntials, [e.target.name]: e.target.value });
   };
   return (
-    <div className="flex items-center justify-center h-screen bg-[#ffffff]">
+    <div className="flex items-center justify-center h-[calc(100vh-5rem)] bg-[#ffffff]">
       <div className="main main lg:w-fit lg:min-w-[30rem] w-full border border-black-500 rounded-md bg-[#ffffff] drop-shadow-2xl subpixel-antialiased mx-6">
         <div className=" container flex flex-col  items-center justify-center pt-14">
           <div className="head m-2">

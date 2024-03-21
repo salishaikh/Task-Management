@@ -4,7 +4,7 @@ import Stack from '@mui/material/Stack';
 const Muialert = (props) => {
 
     return (
-        <> <div className='flex justify-center fixed w-screen '  >
+        <> <div className='flex justify-center fixed w-screen z-20 '  >
             <Alert severity={props.severity} className='  max-w-3xl mt-9'>
                 {props.msg}
             </Alert>

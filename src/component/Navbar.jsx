@@ -1,6 +1,7 @@
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 import LogoImage from "./../assets/logo.webp";
+import cover from "../assets/cover.png";
 import { setMessage } from "../Message";
 
 const Navbar = ({ isLoggedIn, setIsLoggedIn }) => {
@@ -15,8 +16,8 @@ const Navbar = ({ isLoggedIn, setIsLoggedIn }) => {
     <>
       <nav className="bg-[#ffffff] h-[50px] font-[ 'Fira Sans']">
         <div className="main flex items-center h-full justify-between m-1">
-          <div className="logo h-full">
-            <img className="h-full object-contain " src={LogoImage} alt="" />
+          <div className="logo h-full ml-2">
+            <img className="h-full object-contain " src={cover} alt="" />
           </div>
 
           <div className="link flex justify-center ">
