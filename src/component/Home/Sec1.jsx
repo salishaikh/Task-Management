@@ -10,7 +10,7 @@ const Sec1 = ({ cname }) => {
             Manage Your Tasks Easily With{" "}
             <div className="brand text-[#3a90f6]">{cname}</div>
           </div>
-          <div className="flex justify-center lg:mr-16">
+          <div className="flex justify-center lg:mr-16 pt-3 lg:pt-0">
             <Link to="/dashboard"
               className="relative overflow-hidden h-12 px-8 rounded-full group bg-white  [background-size:400%] text-black cursor-pointer drop-shadow-lg before:transition-transform before:duration-300 hover:before:scale-x-100 before:scale-x-0 before:absolute before:top-0 before:left-0  before:origin-[0_50%] before:w-full before:h-full before:rounded-full before:bg-gradient-to-r before:from-cyan-500 before:to-blue-500 "           >
 

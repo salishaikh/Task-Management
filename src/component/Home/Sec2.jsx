@@ -9,12 +9,7 @@ const Sec2 = () => {
             About{" "}
           </div>
           <div className="cont lg:w-[50%] w-full lg:mt-[2rem] lg:mr-[5rem] p-2  leading-8 font-[ 'Fira Sans']">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque
-            natus hic ducimus quasi non, est sint ex mollitia illo excepturi
-            numquam ullam, dolor nihil labore exercitationem corrupti odio, ut
-            adipisci error. Facere, aspernatur officiis repudiandae quos nemo
-            reiciendis asperiores corrupti! Lorem ipsum dolor sit amet
-            consectetur adipisicing elit. Omnis quas blanditiis nihil illum! Ex
+            At Taskify, we specialize in providing a user-friendly CRUD (Create, Read, Update, Delete) task management system. Our platform is designed to streamline the task management process, making it easier for individuals and teams to organize, track, and prioritize their tasks effectively.
 
           </div>
         </div>
