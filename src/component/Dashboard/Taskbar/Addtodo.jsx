@@ -61,7 +61,7 @@ const Addtodo = (props) => {
                 <div className="head  flex justify-between items-center min-h-8 w-full  text-black">
                   {" "}
                   <div className="left flex justify-center items-center ml-3">
-                    <div className={`circle ${props.status === 'done' && 'bg-green-300'} ${props.status === 'todo' && 'bg-blue-400'} ${props.status === 'doing' && 'bg-yellow-300'} rounded-full w-[1rem] h-[1rem]`}></div>
+                    <div className={`circle ${props.status === 'done' && 'bg-green-500'} ${props.status === 'todo' && 'bg-blue-500'} ${props.status === 'doing' && 'bg-yellow-500'} rounded-full w-[1rem] h-[1rem]`}></div>
                     <div className="title mx-3 font-semibold scroll-smooth ">{props.name}</div>
                   </div>
                   <div className="right flex  mr-2">

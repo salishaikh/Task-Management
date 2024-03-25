@@ -70,7 +70,7 @@ const Addmodal = () => {
             }`}
         >
           <div className="relative p-4 lg:w-full w-[20rem] lg:max-w-md max-h-full">
-            <div className="relative bg-gray-200  rounded-lg  drop-shadow-2xl">
+            <div className="relative bg-white lg:bg-gray-200  rounded-lg  drop-shadow-2xl">
               <div className="flex items-center justify-between p-4 md:p-5 border-b rounded-t border-black">
                 <h3 className="text-lg font-semibold text-black ">
                   Create New Task
@@ -120,7 +120,7 @@ const Addmodal = () => {
                       type="text"
                       name="name"
                       id="name"
-                      className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:focus:border-primary-500"
+                      className="lg:bg-gray-50 bg-gray-200 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:focus:border-primary-500"
                       placeholder="Type task name"
                     />
                   </div>
@@ -142,7 +142,7 @@ const Addmodal = () => {
                       value={desc}
                       id="description"
                       rows="4"
-                      className="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 "
+                      className="block p-2.5 w-full text-sm text-gray-900 lg:bg-gray-50 bg-gray-200 rounded-lg border border-gray-300 "
                       placeholder="Write  description here"
                     ></textarea>
                   </div>
